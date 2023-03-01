@@ -28,6 +28,25 @@ This will add _all_ unstaged changes at once, so be careful! Only use this when 
 
 Although Git opens the full text editor for you, suggesting you write a short story about the commit, I don't think that's correct. A short sentence or phrase that begins with the **action taken** is appropriate. "Add section on good commit messages" might be a solid one for this section of the text. The reader quickly knows what changed and how.
 
+There are other places to add more detail, some of which we'll discuss later. For now, there is a little-known Git feature to add more detail about a commit afterwards and separately: Notes.
 
 
+## Git Notes
 
+Git Notes are note exactly a secret feature, but since GitHub doesn't show them, they might as well be. They allow additional context to commits. Think of them as accessories to commits—stored separately, but related.
+
+To add a note, run `git notes add`. This will bring up the text editor, allowing you to write whatever you like.
+
+By default, the note will be added to the most recent commit.
+
+Run `git log` to see how the note adds to the commit message.
+
+Wanna makes changes to the current note? `git notes edit` will bring the editor back up!
+
+If you want to add notes for another commit, use `git notes add <commit ID>`. 
+
+`git notes remove` works as you'd expect, and can also accept a commit ID.
+
+## Check For Understanding
+
+**Makes some changes to your files, then commit the changes. Then, add a log to both the current commit and the previous commit!**
