@@ -92,6 +92,7 @@ Ah but wait; it turns out we wanted to add something to `file2.txt` as part of t
 
 ```shell
 echo "But wait! Don't leave me behind!" >> file2.txt
+git add file2.txt
 git commit --amend -m "I feel good about this commit"
 ```
 
