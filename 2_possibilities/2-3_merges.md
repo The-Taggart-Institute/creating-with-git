@@ -102,5 +102,11 @@ Now, `git log --graph --oneline` will only show a single commit for all that eff
 
 Personally, I don't like to squash commits unless it would be very messy (dozens of commits clogging up the log) to do otherwise. I prefer to be able to see exactly what got merged in my primary branch.
 
+And now that we're done with the `phase2` branch, we can delete it.
+
+```shell
+git branch -D phase 2
+```
+
 Now that's how merges work when everything's going well. Up next, we'll cover what happens when thinks go wrong.
 
