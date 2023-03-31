@@ -108,5 +108,5 @@ And now that we're done with the `phase2` branch, we can delete it.
 git branch -D phase 2
 ```
 
-Now that's how merges work when everything's going well. Up next, we'll cover what happens when thinks go wrong.
+Now that's how merges work when everything's going well. Up next, we'll cover what happens when things go wrong.
 
