@@ -69,4 +69,4 @@ As always, there is a great deal more depth to the topic of conflict resolution,
 
 ## Check For Understanding
 
-What happens if I make commits to the same file in 2 different branches, but on different lines? Maybe something to test...
+**What happens if I make commits to the same file in 2 different branches, but on different lines? Maybe something to test...**
