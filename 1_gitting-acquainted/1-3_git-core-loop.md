@@ -48,7 +48,7 @@ Let's head on over to our `gitdemo` folder/repo to do some work.
 
 To start, let's create a new file by outputting text via the terminal:
 
-```shell
+```bash
 echo "My first commit!" > file1.txt
 ```
 
@@ -86,7 +86,7 @@ Then, run `git status` one more time.
 We have made history! It might not seem momentous, but the timeline of our repo has begun. Run `git log` to see it in all its glory.
 
 
-```shell
+```bash
 commit 0581a2b2cb2ec73d92809e25457d6ae5fd6d3060 (HEAD -> main)
 Author: Michael Taggart <mtaggart@taggart-tech.com>
 Date:   Mon Feb 27 00:01:19 2023 -0800
@@ -107,7 +107,7 @@ There are other ways to view the log and we'll explore them soon. For now, just 
 
 The first commit is cool, but the second commit? That's when the good stuff happens. Let's make another change.
 
-```shell
+```bash
 echo "My second commit!" >> file1.txt
 ```
 
@@ -125,13 +125,13 @@ Git is telling us a new line has been added since the last commit. Which, yeah, 
 
 Speaking of commit messages, let's try a slightly quicker method for this one. By passing the `-m` option and a message, we can avoid entering the text editor for the commit message.
 
-```shell
+```bash
 git commit -m "Add second line to file1"
 ```
 
 Notice what Git tells us after this: 
 
-```shell
+```bash
 [main d9e8f3e] Add second line to file1
  1 file changed, 1 insertion(+)
 ```

@@ -6,7 +6,7 @@ This whole time, we've been pretending to be working with a team on different fe
 
 All the way back at the beginning of the course, I asked you to **fork** this repo on GitHub and then **clone** your copy of the repo. And then we never mentioned those two operations again. Now I'd like you to navigate to that folder on your computer in your terminal, and run the following command:
 
-```shell
+```bash
 cat .git/config
 ```
 
@@ -47,7 +47,7 @@ Create that thing! GitHub will then helpfully give you some pointers on how to c
 
 Get your Terminal into the `gitdemo` folder. Here's where we add a remote manually.
 
-```shell
+```bash
 git remote add origin git@github.com:your-username/gitdemo.git
 ```
 
@@ -59,7 +59,7 @@ If you `cat .git/config` now, you'll see a remote set up!
 
 Right now, Git doesn't know that your local `main` has anything to do with `main` on GitHub. Well in fact, right now GitHub's `main` doesn't exist. Let's fix that. 
 
-```shell
+```bash
 git push -u origin main
 ```
 

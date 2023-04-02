@@ -4,7 +4,7 @@ Let's switch back over to our `experiment` branch. You can do so with either `gi
 
 Anyway, once we're there, let's add some content to `experiment.txt`
 
-```shell
+```bash
 echo "Work in progress" >> experiment.txt
 ```
 
@@ -14,7 +14,7 @@ Now of course `git status` shows we have unstaged changes.
 
 Alright well that's enough experimenting for today! Now back to work on the `main` branch.
 
-```shell
+```bash
 git switch main
 ```
 
@@ -32,7 +32,7 @@ Yeah so, it turns out that `git` saw this problem coming. You're working on some
 
 `git stash --help`, as usual, gives more detail than is immediately useful without context, so let's start playing around. Try just:
 
-```shell
+```bash
 git stash
 ```
 
@@ -52,13 +52,13 @@ The unique part of this status message is the `Dropped refs...` at the bottom. T
 
 Let's put the changes back in the stash, but this time, we'll do so with the `push` command. We'll also provide a custom message rather than the default "WIP" one Git makes for us.
 
-```shell
+```bash
 git stash push -m "Not finished with this experiment!"
 ```
 
 Before bringing our changes back again, let's run `git stash list`. This shows the existing changes in the stash. Yes, you can have more than one. To prove it, let's move back over to `main` and make some unstaged changes.
 
-```shell
+```bash
 git checkout main
 echo "Putting the work in" >> file2.txt
 git stash push -m "Working on main"
@@ -74,13 +74,13 @@ Let's head back over to experiment with `git checkout -`. How do we get the righ
 
 `git stash pop` takes an optional `--index` argument that refers to the number inside the `{}` characters in `git stash list`. So:
 
-```shell
+```bash
 git stash pop --index 1
 ```
 
 Will reapply the proper changes to our branch. Let's finish up here.
 
-```shell
+```bash
 echo "Done...for now" >> experiment.txt
 git commit -am "Finish WIP experiment"
 ```

@@ -6,7 +6,7 @@ Your commit history is the story of your project. How do you want it to read? Pe
 
 Right now our `gitdemo` project is pretty small, so that can be difficult to simulate. Still, let's give it a go. Start by adding a second file.
 
-```shell
+```bash
 echo "This is the second file!1" > file2.txt
 git add file2.txt
 git commit -m "Add second file"
@@ -18,7 +18,7 @@ The next step in our project's life is to fix the mistake. Bugfixes are importan
 
 For this commit, we'll learn another shortcut. You can add/commit with one move by adding `-a` to `git commit`, like so:
 
-```shell
+```bash
 git commit -am "Fix file2 typo"
 ```
 

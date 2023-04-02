@@ -4,7 +4,7 @@ So far our commits have been nice a linear, with no mistakes. But a quick look a
 
 So let's get into some trouble and learn how to get out of it. We'll begin by creating a file and committing it, even though we don't _actually_ want it. 
 
-```shell
+```bash
 echo "I shouldn't be here!" > mistake.txt
 git add mistake.txt
 git commit -m "Add a mistake"
@@ -15,14 +15,14 @@ So of course this is a bit contrived, but it's not uncommon to decide we no long
 
 It's more appropriate in these situations to `git rm <file>`, which is what we'll do now. This will delete the file _and_ stage the deletion for commit.
 
-```shell
+```bash
 git rm mistake.txt
 ```
 
 Notice that `git status` now shows a `deleted` event staged. Commit this change.
 
 
-```shell
+```bash
 git commit -m "Remove mistake.txt"
 ```
 
@@ -30,7 +30,7 @@ There is also a `git mv` that will rename files and automatically stage the chan
 
 Okay but what happens if we remove a file with `rm` and want it back?
 
-```shell
+```bash
 rm file1.txt
 ```
 
@@ -38,7 +38,7 @@ rm file1.txt
 
 No worries, friendo. Git knows about the file and has its contents in the depths of its archives. Because we _didn't_ `git rm` it from the working tree, we can do the following:
 
-```shell
+```bash
 git restore file1.txt
 ```
 
@@ -51,7 +51,7 @@ Since Git obviously stores files in its database, you might imagine it's possibl
 
 There's kind of a lot to `git reset`, and we'll be coming back to it. For now, let's make a single commit that we come to regret.
 
-```shell
+```bash
 echo "I wish I hadn't done this" >> file1.txt
 git commit -am "I'll come to regret this"
 ```
@@ -62,7 +62,7 @@ We've seen the term `HEAD` in `git log` output already. This is where it comes i
 
 Watch what happens when we reset to it.
 
-```shell
+```bash
 git reset HEAD^
 ```
 
@@ -83,14 +83,14 @@ One last important note about `git reset`. Implicitly, we are passing the `--sof
 
 Let's add just a bit more to our repo.
 
-```shell
+```bash
 echo "Ah just kidding, I'm good with it" >> file1.txt
 git commit -am "I feel good about this commit"
 ```
 
 Ah but wait; it turns out we wanted to add something to `file2.txt` as part of this commit! If we have more to add to an existing commit, we can use `--amend` with `git commit` to add our new changes to the last commit. Without any other options, this will pop open the text editor, but you can use `-m` to provide a message on the command line.
 
-```shell
+```bash
 echo "But wait! Don't leave me behind!" >> file2.txt
 git add file2.txt
 git commit --amend -m "I feel good about this commit"

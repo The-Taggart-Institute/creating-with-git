@@ -18,7 +18,7 @@ An important point in this diagram is commits `F` and `G`. Notice that commits c
 
 Let's see if we can get that going with a couple of commits on `main`. Make sure you're on that branch before continuing.
 
-```shell
+```bash
 git switch main
 echo "The work goes on" >> file1.txt
 git commit -am "Continued main updates"
@@ -28,7 +28,7 @@ git commit -am "Even more main updates"
 
 Cool, we now have some parallel commits to our `experiment` branch. Now, we're ready for our first merge. The most basic version of the syntax is `git merge <branch>`, so:
 
-```shell
+```bash
 git merge experiment
 ```
 
@@ -48,7 +48,7 @@ First, try `git log --graph`. You'll see something like this:
 
 I've highlighted the branch diagram, as well as the most recent commit on each branch which identifies the branch name. Although simplistic, this little diagram can tell us a lot about the history of our repo, and where a commit came from. But it is kind of a lot of text. Luckily, we can abbreviate it. 
 
-```shell
+```bash
 git log --graph --oneline
 ```
 
@@ -66,14 +66,14 @@ Much easier to read if you ask me.
 For the next bit, it's time once again for a new branch. Let's make the `phase2` branch and switch two it. This time we'll use `git switch` instead of `git checkout`, with the `-c` option, to create a new branch.
 
 
-```shell
+```bash
 git switch -c phase2
 ```
 
 Now, time for some commits! Here's a set of commands to quickly generate some commits.
 
 
-```shell
+```bash
 touch phase2.txt
 git add phase2.txt
 git commit -m "Add phase2.txt"
@@ -86,7 +86,7 @@ But before we merge these commits, let's pause for a moment. Do we _really_ need
 
 We can do that with the `--squash` option. This will compress the many commits into change, apply it to the current working tree, but _not_ execute the commit. You still need to review the changes first, and then you can make the commit.
 
-```shell
+```bash
 git merge --squash phase2
 ```
 
@@ -94,7 +94,7 @@ git merge --squash phase2
 
 You can see here that `phase2.txt`, all 10 lines of it, is added. However we're also told that as this is a "squash commit," `HEAD` will not be updated. That's why my Git status indicator turns gold, indicating I have staged changes. `git status` will show I have a new file staged. From here, as long as I'm happy with the results of the merge, I'm ready to commit.
 
-```shell
+```bash
 git commit -m "Merge phase2"
 ```
 
@@ -104,7 +104,7 @@ Personally, I don't like to squash commits unless it would be very messy (dozens
 
 And now that we're done with the `phase2` branch, we can delete it.
 
-```shell
+```bash
 git branch -D phase 2
 ```
 

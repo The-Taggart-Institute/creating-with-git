@@ -16,7 +16,7 @@ To best use GitHub the way we intend, we need to connect an SSH key to it. This 
 
 If you know what an SSH key is and have one already, you can skip this part. For everyone else, let's check if you do have one. In your terminal (on Linux and macOS), run the following command:
 
-```shell
+```bash
 cat ~/.ssh/id_rsa.pub
 ```
 
@@ -28,7 +28,7 @@ cat ~/_ssh/id_rsa.pub
 
 If you get output, that's your SSH public key! That's what we'll need for the next step. If you didn't get anything, then for all operating systems, you're running:
 
-```shell
+```bash
 ssh-keygen
 ```
 
@@ -54,7 +54,7 @@ Fork the repo to your account with this button:
 
 With your very own copy of the repo, clone it down by copying the URL and then heading over to your terminal and typing:
 
-```shell
+```bash
 git clone git@github.com:your-github-account/creating-with-git.git
 ```
 
@@ -62,7 +62,7 @@ If you added a passphrase to your SSH key, you'll be prompted for it. Type it in
 
 We'll learn more about what `clone` actually means later, but for now, hey! You have your very own copy of this repo. Get in there.
 
-```shell
+```bash
 cd creating-with-git
 ```
 
@@ -70,7 +70,7 @@ cd creating-with-git
 
 This project uses [honkit](https://github.com/honkit/honkit), which is a Node package. That means we need to have Node/NPM installed. head over to [NodeJS](https://nodejs.org/en/) for details on installing Node/NPM for your platform. The LTS version will do fine. Once it's all installed, run the following in our repo:
 
-```shell
+```bash
 npm i --dev
 ```
 

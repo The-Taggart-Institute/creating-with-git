@@ -8,7 +8,7 @@ Conflicts are uncommon, but also unavoidable when you have a large number of bra
 
 Git has a process for resolving these conflicts, but it takes getting used to. Let's get ourselves into some trouble!
 
-```shell
+```bash
 git switch -c trouble
 echo "This line goes out to the rebels!" >> file1.txt
 echo "This line goes out to the dreamers!" >> file2.txt
@@ -56,7 +56,7 @@ Save and quit.
 
 We now have to re-stage `file1.txt` and commit our changes to finish the merge.
 
-```shell
+```bash
 git add file1.txt
 git merge --continue
 ```

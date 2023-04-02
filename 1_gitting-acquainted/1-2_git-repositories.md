@@ -14,7 +14,7 @@ Let's start from the assumption that you have Git installed. On the command line
 
 While we're at it, let's configure Git for our usage. We need to tell Git who we are, so our changes (**commits**) can be labeled. We do so by providing a username and an email address.
 
-```shell
+```bash
 git config --global user.name=username
 git config --global user.email=user@domain.com
 ```
@@ -23,7 +23,7 @@ The username and email don't _have_ to match your GitHub account, but it's not a
 
 With that out of the way, let's make a new folder **outside of this repository**. We'll use this folder as a sort of laboratory for Git experiments. Then we can take what we've learned and apply it to the Checks for Understanding in this repo.
 
-```shell
+```bash
 mkdir gitdemo
 cd gitdemo
 git init -b main

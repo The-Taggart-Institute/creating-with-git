@@ -4,7 +4,7 @@ Before we finish with the unit on Git mechanics, I want to discuss two other inv
 
 For this exploration, let's begin by making two branches off of `main`.
 
-```shell
+```bash
 git switch -c longterm
 git switch -c shorttem
 git switch main
@@ -18,7 +18,7 @@ But what if one of these branches ends up doing something cool that another bran
 
 If we've been disciplined with our commits, we can use `git cherry-pick`. This will take a single commit hash and apply it to the current working tree without any other changes before or after. Let's see it in action by making a bunch of commits in `longterm`.
 
-```shell
+```bash
 git switch longterm
 echo "The start of something great" > newfeature.txt
 git add newfeature.txt
@@ -35,13 +35,13 @@ So, alongside the ongoing work on `newfeature.txt`, the folks working on `longte
 
 First, grab the commit hash for the most recent commit:
 
-```shell
+```bash
 git log --oneline -n 1
 ```
 
 Then, head over to `main` and pick that cherry!
 
-```shell
+```bash
 git switch main
 git cherry-pick <commit hash>
 ```
@@ -76,7 +76,7 @@ Note that the leftmost line is always our current branch, which is why `main` lo
 
 At this point, we have two options: we can `merge` main into `shortterm`, which will work fine, but may not be the story we want to tell, since we'll later be merging `shortterm` back to `main`. If we want `shortterm` to have its commits appear _after_ the work in `main`, we have another option: `git rebase` will take our branch's commits and apply them after the new base, creating a single cohesive history. Try it!
 
-```shell
+```bash
 git rebase main
 ```
 
