@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>2-2: Hanging onto Changes · HonKit</title>
+        <title>2-4: When Merges Go Wrong · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
@@ -60,10 +60,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-3_merges.html" />
+    <link rel="next" href="2-5_more-commit-sorcery.html" />
     
     
-    <link rel="prev" href="2-1_branches.html" />
+    <link rel="prev" href="2-3_merges.html" />
     
 
     </head>
@@ -216,7 +216,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="2-2_hanging-onto-changes.html">
+        <li class="chapter " data-level="1.3.2" data-path="2-2_hanging-onto-changes.html">
             
                 <a href="2-2_hanging-onto-changes.html">
             
@@ -242,7 +242,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="2-4_when-merges-go-wrong.html">
+        <li class="chapter active" data-level="1.3.4" data-path="2-4_when-merges-go-wrong.html">
             
                 <a href="2-4_when-merges-go-wrong.html">
             
@@ -425,7 +425,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2-2: Hanging onto Changes</a>
+        <a href=".." >2-4: When Merges Go Wrong</a>
     </h1>
 </div>
 
@@ -440,54 +440,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="2-2-hanging-onto-changes">2-2: Hanging Onto Changes</h1>
-<p>Let&apos;s switch back over to our <code>experiment</code> branch. You can do so with either <code>git switch</code> or <code>git checkout</code>. I tend to use <code>git checkout</code>, but that&apos;s because I&apos;m a thousand years old.</p>
-<p>Anyway, once we&apos;re there, let&apos;s add some content to <code>experiment.txt</code></p>
-<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Work in progress&quot;</span> &gt;&gt; experiment.txt
+                                <h1 id="2-4-when-merges-go-wrong">2-4: When Merges Go Wrong</h1>
+<p><img src="../img/git-conflict.jpg" alt="Git Conflict"></p>
+<p>Two objects cannot occupy the same point in space and time, or so say Newtonian physics. While quantum reality may get a little fuzzier on those questions, Git commits do not. During a merge, commits that have different changes in the same file, on the same line results in <strong>merge conflicts</strong>.</p>
+<p>Conflicts are uncommon, but also unavoidable when you have a large number of branches or developers for the same project. Sooner or later, somebody will make a change to a file in direct contradiction to somebody else&apos;s change.</p>
+<p>Git has a process for resolving these conflicts, but it takes getting used to. Let&apos;s get ourselves into some trouble!</p>
+<pre><code class="lang-bash">git switch -c trouble
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This line goes out to the rebels!&quot;</span> &gt;&gt; file1.txt
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This line goes out to the dreamers!&quot;</span> &gt;&gt; file2.txt
+git commit -am <span class="hljs-string">&quot;Who cares about main; I&apos;m doing my own thing&quot;</span>
+git switch main
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I&apos;m definitely keeping this&quot;</span> &gt;&gt; file1.txt
+git commit -am <span class="hljs-string">&quot;Add line to file1 that I&apos;m definitely keeping&quot;</span>
+git merge trouble
 </code></pre>
-<p>Now of course <code>git status</code> shows we have unstaged changes.</p>
-<p><img src="../img/git-status-5.png" alt="unstaged changes"></p>
-<p>Alright well that&apos;s enough experimenting for today! Now back to work on the <code>main</code> branch.</p>
-<pre><code class="lang-bash">git switch main
+<p>Aaaand conflict.</p>
+<p><img src="../img/git-conflict-1.png" alt="Git Conflict 1"></p>
+<p>Uh oh. What have we done?!</p>
+<p>First, review <code>git status</code> to understand the current state of the working tree.</p>
+<h2 id="conflict-syntax">Conflict Syntax</h2>
+<p><img src="../img/git-conflict-2.png" alt="Git Conflict 2"></p>
+<p>There&apos;s quite a bit of information here. First, we&apos;re told the merge did not complete. If we want to back out entirely, we can! We can run <code>git merge --abort</code>, and we&apos;ll go back to our clean <code>main</code>, no harm no foul. But what about that change in <code>file2.txt</code>? What if we actually want that? We can&apos;t just ignore this problem; we need to confront it head-on. For the first time in this course, I&apos;m going to ask you to use a text editor. Any editor will do, but use it to open <code>file1.txt</code>.</p>
+<p><img src="../img/git-conflict-3.png" alt="Git Conflict 3"></p>
+<p>What da—Git modified our file for us! Yeah, this is one of the more intrusive Git operations. When there&apos;s a conflict in a file, Git will add lines indicating where conflicting sections begin an end. This will always start with the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> marker to indicate the current state. Beneath that are all the lines that are currently present in the branch you&apos;re on. Then comes <code>=======</code> to show the branch separation. Then comes all the lines that differ, until the <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> and branch name. </p>
+<h2 id="resolving-conflicts">Resolving Conflicts</h2>
+<p>To sort this mess out, you need to decide which lines stay and which lines go. This is a <em>manual process</em>. There are tools that can make it a little easier, and we&apos;ll discuss them later, but I want you to be comfortable with how Git presents its raw data. </p>
+<p>I think we want to keep the current branch&apos;s version, so let&apos;s delete not only the Git markings, but also the incoming line from <code>trouble</code>. The file should look like this when done:</p>
+<pre><code>My first commit!
+My second commit!
+I wish I hadn&apos;t done this
+Ah just kidding, I&apos;m good with it
+The work goes on
+I&apos;m definitely keeping this
+</code></pre><p>Save and quit.</p>
+<p>We now have to re-stage <code>file1.txt</code> and commit our changes to finish the merge.</p>
+<pre><code class="lang-bash">git add file1.txt
+git merge --<span class="hljs-built_in">continue</span>
 </code></pre>
-<p>Wait, what?!</p>
-<p><img src="../img/git-switch-1.png" alt="git switch 1"></p>
-<p>You can&apos;t leave with uncommitted changes! This is actually where <code>git checkout</code> makes sense as a metaphor. You can&apos;t leave the store with items you didn&apos;t pay for! Also, I love how the error message still says <code>checkout</code>, even when we use <code>git switch</code>.</p>
-<p>We&apos;re told we have 2 options: commit our changes or &quot;stash&quot; them. Stash them where? Under the floorboards? In a shoebox under the bed?</p>
-<p>Yeah so, it turns out that <code>git</code> saw this problem coming. You&apos;re working on something, you&apos;re not ready to commit, but you need to switch branches. What should you do? Git comes with a place to store work-in-progress changes before you commit them: the stash. </p>
-<h2 id="the-stash">The Stash</h2>
-<p><code>git stash --help</code>, as usual, gives more detail than is immediately useful without context, so let&apos;s start playing around. Try just:</p>
-<pre><code class="lang-bash">git stash
-</code></pre>
-<p>You should see something like:</p>
-<p><img src="../img/git-stash-1.png" alt="git stash 1"></p>
-<p>If you <code>cat experiment.txt</code>, you&apos;ll see that the new line has disappeared. But it&apos;s not gone forever; it&apos;s just in the stash! Let&apos;s bring it back.</p>
-<pre><code>git stash pop
-</code></pre><p><img src="../img/git-stash-2.png" alt="git stash 2"></p>
-<p>The unique part of this status message is the <code>Dropped refs...</code> at the bottom. This is telling us that we just removed a reference from the stash and reapplied it to our working tree.</p>
-<p>Let&apos;s put the changes back in the stash, but this time, we&apos;ll do so with the <code>push</code> command. We&apos;ll also provide a custom message rather than the default &quot;WIP&quot; one Git makes for us.</p>
-<pre><code class="lang-bash">git stash push -m <span class="hljs-string">&quot;Not finished with this experiment!&quot;</span>
-</code></pre>
-<p>Before bringing our changes back again, let&apos;s run <code>git stash list</code>. This shows the existing changes in the stash. Yes, you can have more than one. To prove it, let&apos;s move back over to <code>main</code> and make some unstaged changes.</p>
-<pre><code class="lang-bash">git checkout main
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Putting the work in&quot;</span> &gt;&gt; file2.txt
-git stash push -m <span class="hljs-string">&quot;Working on main&quot;</span>
-</code></pre>
-<p>Now, try <code>git stash list</code> again.</p>
-<p><img src="../img/git-stash-3.png" alt="git stash 3"></p>
-<p>See? We can have multiple changes stashed—even across branches! </p>
-<p>Let&apos;s head back over to experiment with <code>git checkout -</code>. How do we get the right stash entry back out?</p>
-<p><code>git stash pop</code> takes an optional <code>--index</code> argument that refers to the number inside the <code>{}</code> characters in <code>git stash list</code>. So:</p>
-<pre><code class="lang-bash">git stash pop --index 1
-</code></pre>
-<p>Will reapply the proper changes to our branch. Let&apos;s finish up here.</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Done...for now&quot;</span> &gt;&gt; experiment.txt
-git commit -am <span class="hljs-string">&quot;Finish WIP experiment&quot;</span>
-</code></pre>
-<p>Now, we don&apos;t really need that other stashed change from <code>main</code> anymore. We can remove it from the stash with <code>git stash drop</code>. This command can also be used with an index number, similar to <code>pop</code>, if we have multiple stash entries.</p>
-<p>And that&apos;s it for hanging on to work in progress changes! Up next, we&apos;ll cover joining two branches together again.</p>
+<p>When we do <code>git merge --continue</code>, you&apos;ll notice a text editor pops up. You can of course pass <code>-m</code> with a message to bypass this. But hey! Our working tree is clean again! </p>
+<p>Run <code>git log --oneline --graph</code> to see the fruits of your labor. Look at those pretty branches.</p>
+<p>As always, there is a great deal more depth to the topic of conflict resolution, but this is where to start. You&apos;ll now have what you need to fix these issue when they arise.</p>
 <h2 id="check-for-understanding">Check For Understanding</h2>
-<p><strong>Create a new branch. Then, make some unstaged changes. Stash them and switch back to <code>main</code>. Move back to your new branch and reapply the changes. Switch back to <code>main</code> again. Repeat until you can do this without looking up the commands!</strong></p>
+<p><strong>What happens if I make commits to the same file in 2 different branches, but on different lines? Maybe something to test...</strong></p>
 
                                 
                                 </section>
@@ -515,12 +509,12 @@ git commit -am <span class="hljs-string">&quot;Finish WIP experiment&quot;</span
 
             
                 
-                <a href="2-1_branches.html" class="navigation navigation-prev " aria-label="Previous page: 2-1: Branches">
+                <a href="2-3_merges.html" class="navigation navigation-prev " aria-label="Previous page: 2-3: Merges">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-3_merges.html" class="navigation navigation-next " aria-label="Next page: 2-3: Merges">
+                <a href="2-5_more-commit-sorcery.html" class="navigation navigation-next " aria-label="Next page: 2-5: More Commit Sorcery">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -531,7 +525,7 @@ git commit -am <span class="hljs-string">&quot;Finish WIP experiment&quot;</span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2-2: Hanging onto Changes","level":"1.3.2","depth":2,"next":{"title":"2-3: Merges","level":"1.3.3","depth":2,"path":"2_possibilities/2-3_merges.md","ref":"2_possibilities/2-3_merges.md","articles":[]},"previous":{"title":"2-1: Branches","level":"1.3.1","depth":2,"path":"2_possibilities/2-1_branches.md","ref":"2_possibilities/2-1_branches.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_possibilities/2-2_hanging-onto-changes.md","mtime":"2023-04-02T15:11:15.927Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:02:29.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2-4: When Merges Go Wrong","level":"1.3.4","depth":2,"next":{"title":"2-5: More Commit Sorcery","level":"1.3.5","depth":2,"path":"2_possibilities/2-5_more-commit-sorcery.md","ref":"2_possibilities/2-5_more-commit-sorcery.md","articles":[]},"previous":{"title":"2-3: Merges","level":"1.3.3","depth":2,"path":"2_possibilities/2-3_merges.md","ref":"2_possibilities/2-3_merges.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_possibilities/2-4_when-merges-go-wrong.md","mtime":"2023-04-02T15:11:15.923Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:16:17.809Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

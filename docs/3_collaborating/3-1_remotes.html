@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>2-4: When Merges Go Wrong · HonKit</title>
+        <title>3-1: Remotes · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
@@ -60,10 +60,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-5_more-commit-sorcery.html" />
+    <link rel="next" href="3-2_pull-requests.html" />
     
     
-    <link rel="prev" href="2-3_merges.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../2_possibilities/">
             
-                <a href="./">
+                <a href="../2_possibilities/">
             
                     
                     2: Possibilities
@@ -203,9 +203,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1_branches.html">
+        <li class="chapter " data-level="1.3.1" data-path="../2_possibilities/2-1_branches.html">
             
-                <a href="2-1_branches.html">
+                <a href="../2_possibilities/2-1_branches.html">
             
                     
                     2-1: Branches
@@ -216,9 +216,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2_hanging-onto-changes.html">
+        <li class="chapter " data-level="1.3.2" data-path="../2_possibilities/2-2_hanging-onto-changes.html">
             
-                <a href="2-2_hanging-onto-changes.html">
+                <a href="../2_possibilities/2-2_hanging-onto-changes.html">
             
                     
                     2-2: Hanging onto Changes
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="2-3_merges.html">
+        <li class="chapter " data-level="1.3.3" data-path="../2_possibilities/2-3_merges.html">
             
-                <a href="2-3_merges.html">
+                <a href="../2_possibilities/2-3_merges.html">
             
                     
                     2-3: Merges
@@ -242,9 +242,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="2-4_when-merges-go-wrong.html">
+        <li class="chapter " data-level="1.3.4" data-path="../2_possibilities/2-4_when-merges-go-wrong.html">
             
-                <a href="2-4_when-merges-go-wrong.html">
+                <a href="../2_possibilities/2-4_when-merges-go-wrong.html">
             
                     
                     2-4: When Merges Go Wrong
@@ -255,9 +255,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="2-5_more-commit-sorcery.html">
+        <li class="chapter " data-level="1.3.5" data-path="../2_possibilities/2-5_more-commit-sorcery.html">
             
-                <a href="2-5_more-commit-sorcery.html">
+                <a href="../2_possibilities/2-5_more-commit-sorcery.html">
             
                     
                     2-5: More Commit Sorcery
@@ -273,9 +273,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../3_collaborating/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../3_collaborating/">
+                <a href="./">
             
                     
                     3: Collaborating
@@ -287,9 +287,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../3_collaborating/3-1_remotes.html">
+        <li class="chapter active" data-level="1.4.1" data-path="3-1_remotes.html">
             
-                <a href="../3_collaborating/3-1_remotes.html">
+                <a href="3-1_remotes.html">
             
                     
                     3-1: Remotes
@@ -300,9 +300,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../3_collaborating/3-2_pull-requests.html">
+        <li class="chapter " data-level="1.4.2" data-path="3-2_pull-requests.html">
             
-                <a href="../3_collaborating/3-2_pull-requests.html">
+                <a href="3-2_pull-requests.html">
             
                     
                     3-2: Pull Requests
@@ -425,7 +425,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2-4: When Merges Go Wrong</a>
+        <a href=".." >3-1: Remotes</a>
     </h1>
 </div>
 
@@ -440,48 +440,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="2-4-when-merges-go-wrong">2-4: When Merges Go Wrong</h1>
-<p><img src="../img/git-conflict.jpg" alt="Git Conflict"></p>
-<p>Two objects cannot occupy the same point in space and time, or so say Newtonian physics. While quantum reality may get a little fuzzier on those questions, Git commits do not. During a merge, commits that have different changes in the same file, on the same line results in <strong>merge conflicts</strong>.</p>
-<p>Conflicts are uncommon, but also unavoidable when you have a large number of branches or developers for the same project. Sooner or later, somebody will make a change to a file in direct contradiction to somebody else&apos;s change.</p>
-<p>Git has a process for resolving these conflicts, but it takes getting used to. Let&apos;s get ourselves into some trouble!</p>
-<pre><code class="lang-bash">git switch -c trouble
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This line goes out to the rebels!&quot;</span> &gt;&gt; file1.txt
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This line goes out to the dreamers!&quot;</span> &gt;&gt; file2.txt
-git commit -am <span class="hljs-string">&quot;Who cares about main; I&apos;m doing my own thing&quot;</span>
-git switch main
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I&apos;m definitely keeping this&quot;</span> &gt;&gt; file1.txt
-git commit -am <span class="hljs-string">&quot;Add line to file1 that I&apos;m definitely keeping&quot;</span>
-git merge trouble
+                                <h1 id="3-1-remotes">3-1: Remotes</h1>
+<p>This whole time, we&apos;ve been pretending to be working with a team on different features and branches in our project. But in reality, doing so means coordinating respositories across multiple computers. And while we haven&apos;t yet done so with our exploration of Git, this was absolutely its design intention. This where <strong>remotes</strong> come in.</p>
+<h2 id="remotes">Remotes</h2>
+<p>All the way back at the beginning of the course, I asked you to <strong>fork</strong> this repo on GitHub and then <strong>clone</strong> your copy of the repo. And then we never mentioned those two operations again. Now I&apos;d like you to navigate to that folder on your computer in your terminal, and run the following command:</p>
+<pre><code class="lang-bash">cat .git/config
 </code></pre>
-<p>Aaaand conflict.</p>
-<p><img src="../img/git-conflict-1.png" alt="Git Conflict 1"></p>
-<p>Uh oh. What have we done?!</p>
-<p>First, review <code>git status</code> to understand the current state of the working tree.</p>
-<h2 id="conflict-syntax">Conflict Syntax</h2>
-<p><img src="../img/git-conflict-2.png" alt="Git Conflict 2"></p>
-<p>There&apos;s quite a bit of information here. First, we&apos;re told the merge did not complete. If we want to back out entirely, we can! We can run <code>git merge --abort</code>, and we&apos;ll go back to our clean <code>main</code>, no harm no foul. But what about that change in <code>file2.txt</code>? What if we actually want that? We can&apos;t just ignore this problem; we need to confront it head-on. For the first time in this course, I&apos;m going to ask you to use a text editor. Any editor will do, but use it to open <code>file1.txt</code>.</p>
-<p><img src="../img/git-conflict-3.png" alt="Git Conflict 3"></p>
-<p>What da—Git modified our file for us! Yeah, this is one of the more intrusive Git operations. When there&apos;s a conflict in a file, Git will add lines indicating where conflicting sections begin an end. This will always start with the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> marker to indicate the current state. Beneath that are all the lines that are currently present in the branch you&apos;re on. Then comes <code>=======</code> to show the branch separation. Then comes all the lines that differ, until the <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> and branch name. </p>
-<h2 id="resolving-conflicts">Resolving Conflicts</h2>
-<p>To sort this mess out, you need to decide which lines stay and which lines go. This is a <em>manual process</em>. There are tools that can make it a little easier, and we&apos;ll discuss them later, but I want you to be comfortable with how Git presents its raw data. </p>
-<p>I think we want to keep the current branch&apos;s version, so let&apos;s delete not only the Git markings, but also the incoming line from <code>trouble</code>. The file should look like this when done:</p>
-<pre><code>My first commit!
-My second commit!
-I wish I hadn&apos;t done this
-Ah just kidding, I&apos;m good with it
-The work goes on
-I&apos;m definitely keeping this
-</code></pre><p>Save and quit.</p>
-<p>We now have to re-stage <code>file1.txt</code> and commit our changes to finish the merge.</p>
-<pre><code class="lang-bash">git add file1.txt
-git merge --<span class="hljs-built_in">continue</span>
+<p>Now head over to our <code>gitdemo</code> repo that we&apos;ve been working on this whole time. Run the same command. See any differences?</p>
+<p>The cloned repo has several sections not present in <code>gitdemo</code>. For starters, a <code>[remote &quot;origin&quot;]</code> that seems to indicate where the repo came from in the first place. </p>
+<p><strong>Remotes</strong> are copies of the repository on another computer. Often, this is on a Git hosting service like GitHub (there are others, btw). Git will connect to this remote copy of the repo and <strong>pull</strong> new changes present there but missing locally, and <strong>push</strong> new changes that are local but yet to be sent to the remote. </p>
+<p>When working with a team, usually a single remote is defined as the <strong>single source of truth</strong> for a project, and commits to the remote&apos;s <code>main</code> branch are carefully managed. Different hosting services offer different mechanisms for reviewing and approving changes, which we&apos;ll talk about shortly.</p>
+<p>But first, we need to discuss a little more about how remotes work with our local repo. To make this clearer, run <code>git branch -a</code> in your fork of this course repo.</p>
+<p>The <code>-a</code> option shows all branches, not just locals. With this option, you see <code>remotes/origin</code> entries as well. <code>origin</code> is Git&apos;s name for the default remote, and is assigned to a source repo when we <code>clone</code> it.</p>
+<p>You can have more than one remote, for example a backup, or an upstream version of the project. But most repos hosted remotely have just the one.</p>
+<h2 id="git-hosts">Git Hosts</h2>
+<p>Speaking of hosts, while GitHub is by far the most well-known, there are several other choices for Git Hosting! Here are few to check out:</p>
+<ul>
+<li><a href="https://bitbucket.org" target="_blank">Bitbucket</a></li>
+<li><a href="https://about.gitlab.com" target="_blank">GitLab</a></li>
+<li><a href="https://codeberg.org" target="_blank">Codeberg</a></li>
+<li>Or self-host with <a href="https://gitea.io" target="_blank">Gitea</a>!</li>
+</ul>
+<h2 id="remotes-in-action">Remotes In Action</h2>
+<p>We&apos;ve seen <code>git clone</code> do its thing, but there&apos;s actually quite a bit going on under the hood. To demonstrate, we&apos;re going to add a remote to <code>gitdemo</code> manually. To do this, you&apos;ll need a GitHub account, but you already have one of those!</p>
+<p>While logged in, head to <a href="https://github.com/new" target="_blank">https://github.com/new</a>. We&apos;re making a new repo on GitHub. Call it <code>gitdemo</code>. You can make it private if you like. Don&apos;t bother adding a <code>README</code> or anything else. Your options should look something like this:</p>
+<p><img src="../img/git-remotes-1.png" alt="new repo"></p>
+<p>Create that thing! GitHub will then helpfully give you some pointers on how to connect a local repo to it. But don&apos;t jump ahead; we&apos;re doing it step-by-step.</p>
+<h3 id="step-1-add-a-remote">Step 1: Add a Remote</h3>
+<p>Get your Terminal into the <code>gitdemo</code> folder. Here&apos;s where we add a remote manually.</p>
+<pre><code class="lang-bash">git remote add origin git@github.com:your-username/gitdemo.git
 </code></pre>
-<p>When we do <code>git merge --continue</code>, you&apos;ll notice a text editor pops up. You can of course pass <code>-m</code> with a message to bypass this. But hey! Our working tree is clean again! </p>
-<p>Run <code>git log --oneline --graph</code> to see the fruits of your labor. Look at those pretty branches.</p>
-<p>As always, there is a great deal more depth to the topic of conflict resolution, but this is where to start. You&apos;ll now have what you need to fix these issue when they arise.</p>
+<p>We&apos;ve already created a <code>main</code> branch, so we&apos;re all set there.</p>
+<p>If you <code>cat .git/config</code> now, you&apos;ll see a remote set up!</p>
+<h3 id="step-2-connect-local-main-to-originmain">Step 2: Connect Local <code>main</code> to <code>origin/main</code></h3>
+<p>Right now, Git doesn&apos;t know that your local <code>main</code> has anything to do with <code>main</code> on GitHub. Well in fact, right now GitHub&apos;s <code>main</code> doesn&apos;t exist. Let&apos;s fix that. </p>
+<pre><code class="lang-bash">git push -u origin main
+</code></pre>
+<p>And there&apos;s <code>git push</code>! This does 2 things: it creates a <code>main</code> branch on GitHub by uploading our local commits; and it sets up our local <code>main</code> to track the new <code>main</code> on GitHub. You can confirm this by examining <code>.git/config</code>. There&apos;s now a new <code>[branch &quot;main&quot;]</code> section that points to <code>origin</code> as its remote.</p>
+<p>Now that we have a remote, let&apos;s demonstrate merging changes from it to our local copy—also known as a <code>pull</code>.</p>
+<h2 id="making-remote-changes">Making Remote Changes</h2>
+<p>Luckily, GitHub is making a very helpful suggestion for us in terms of remote changes: adding a <code>README</code>!</p>
+<p><img src="../img/git-remotes-2.png" alt="Add a README"></p>
+<p>Let&apos;s do it! Click that button. You&apos;ll be taken to GitHub&apos;s built-in editor for our new file. It&apos;s fine as-is; just hit that big green &quot;Commit changes...&quot; button.</p>
+<p><img src="../img/git-remotes-3.png" alt="Commit Changes"></p>
+<p>And click through again for the default commit message.</p>
+<p>Hey, now there&apos;s a <code>README.md</code> on the GitHub version of <code>main</code>. But our local is missing it.</p>
+<h2 id="fetching-remote-changes">Fetching Remote Changes</h2>
+<p>You might be thinking the solution is <code>git pull</code>, and you&apos;re right, but slow down! <code>git pull</code>, much like <code>git clone</code>, is actually multiple Git commands disguised in a trenchcoat.</p>
+<p>First, let&apos;s run <code>git status</code> to see how things stand.</p>
+<p><img src="../img/git-remotes-4.png" alt="Git Remotes 4"></p>
+<p>Now that we have a remote, <code>git status</code> provides new information. But <em>we know it&apos;s wrong!</em> Our branch is not uo to date with GitHub! What&apos;s up?</p>
+<p>This is important: <strong>Git does not fetch remote changes automatically</strong>. But we can. Do so with <code>git fetch.</code> Now run <code>git status</code> again.</p>
+<p><img src="../img/git-remotes-5.png" alt="Git Remotes 5"></p>
+<p>Aha! Now it knows.</p>
+<p>While it tells us we can run <code>git pull</code>, here&apos;s a secret: <code>git pull</code> is <code>git fetch</code> + <code>git merge &lt;remote branch&gt;</code>. </p>
+<p>So at this point, if you run <code>git merge origin/main</code>, you&apos;ll perform exactly what <code>git pull</code> would have done.</p>
+<p><img src="../img/git-remotes-6.png" alt="Git Remotes 6"></p>
+<p>Nobody actually does this; <code>git pull</code> is way more convenient. But I wanted you to understand what was happening underneath. Because Git maintains a local copy of the remote branch, it&apos;s available for merging after a fetch. Pulling is just a combination of those two operations. </p>
+<p>Okay, that&apos;ll do it for remotes. Up next, we&apos;ll talk about how to handle multiple remote branches and merging changes to <code>main</code>.</p>
 <h2 id="check-for-understanding">Check For Understanding</h2>
-<p><strong>What happens if I make commits to the same file in 2 different branches, but on different lines? Maybe something to test...</strong></p>
+<p><strong>If <code>pull</code> is a combination of <code>fetch</code> and <code>merge</code>, what happens on the remote during <code>git push</code>?</strong></p>
 
                                 
                                 </section>
@@ -509,12 +527,12 @@ git merge --<span class="hljs-built_in">continue</span>
 
             
                 
-                <a href="2-3_merges.html" class="navigation navigation-prev " aria-label="Previous page: 2-3: Merges">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 3: Collaborating">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-5_more-commit-sorcery.html" class="navigation navigation-next " aria-label="Next page: 2-5: More Commit Sorcery">
+                <a href="3-2_pull-requests.html" class="navigation navigation-next " aria-label="Next page: 3-2: Pull Requests">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -525,7 +543,7 @@ git merge --<span class="hljs-built_in">continue</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2-4: When Merges Go Wrong","level":"1.3.4","depth":2,"next":{"title":"2-5: More Commit Sorcery","level":"1.3.5","depth":2,"path":"2_possibilities/2-5_more-commit-sorcery.md","ref":"2_possibilities/2-5_more-commit-sorcery.md","articles":[]},"previous":{"title":"2-3: Merges","level":"1.3.3","depth":2,"path":"2_possibilities/2-3_merges.md","ref":"2_possibilities/2-3_merges.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_possibilities/2-4_when-merges-go-wrong.md","mtime":"2023-04-02T15:11:15.923Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:02:29.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3-1: Remotes","level":"1.4.1","depth":2,"next":{"title":"3-2: Pull Requests","level":"1.4.2","depth":2,"path":"3_collaborating/3-2_pull-requests.md","ref":"3_collaborating/3-2_pull-requests.md","articles":[]},"previous":{"title":"3: Collaborating","level":"1.4","depth":1,"path":"3_collaborating/README.md","ref":"3_collaborating/README.md","articles":[{"title":"3-1: Remotes","level":"1.4.1","depth":2,"path":"3_collaborating/3-1_remotes.md","ref":"3_collaborating/3-1_remotes.md","articles":[]},{"title":"3-2: Pull Requests","level":"1.4.2","depth":2,"path":"3_collaborating/3-2_pull-requests.md","ref":"3_collaborating/3-2_pull-requests.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3_collaborating/3-1_remotes.md","mtime":"2023-04-02T15:11:15.123Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:16:17.809Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

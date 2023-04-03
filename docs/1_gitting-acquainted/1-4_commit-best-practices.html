@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>1: Gitting Acquainted · HonKit</title>
+        <title>1-4: Commit Best Practices · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
@@ -60,10 +60,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1-1_the-project.html" />
+    <link rel="next" href="1-5_fixing-mistakes.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="1-3_git-core-loop.html" />
     
 
     </head>
@@ -105,7 +105,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -158,7 +158,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="1-4_commit-best-practices.html">
+        <li class="chapter active" data-level="1.2.4" data-path="1-4_commit-best-practices.html">
             
                 <a href="1-4_commit-best-practices.html">
             
@@ -425,7 +425,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1: Gitting Acquainted</a>
+        <a href=".." >1-4: Commit Best Practices</a>
     </h1>
 </div>
 
@@ -440,8 +440,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="1-gitting-acquainted">1: Gitting Acquainted</h1>
-<p>This section is all about the basics of Git.</p>
+                                <h1 id="1-4-commit-best-practices">1-4: Commit Best Practices</h1>
+<p>At first, it&apos;s tempting to think of commits like saving your work: do it frequently so that you never risk losing anything. I get that, but I urge you to resist that instinct.</p>
+<p>Your commit history is the story of your project. How do you want it to read? Personally, I would want clear events that tell the story of how the project evolved. Not every commit has to be an epic moment, but they should be, whenever possible, distinct accomplishments.</p>
+<p>Right now our <code>gitdemo</code> project is pretty small, so that can be difficult to simulate. Still, let&apos;s give it a go. Start by adding a second file.</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is the second file!1&quot;</span> &gt; file2.txt
+git add file2.txt
+git commit -m <span class="hljs-string">&quot;Add second file&quot;</span>
+</code></pre>
+<p>That&apos;s not a typo in the first command. Well it is, but it&apos;s intentional. We&apos;ve committed a mistake. Now our objective should be to fix it. Use whatever text editor you like to remove the <code>1</code> from the end of <code>file2.txt</code>.</p>
+<p>The next step in our project&apos;s life is to fix the mistake. Bugfixes are important commits and should be isolated as much as possible. Don&apos;t lump them in with other changes—at some point you&apos;ll want to know <em>when</em> a fix was introduced, and it&apos;ll be much easier if it is by itself.</p>
+<p>For this commit, we&apos;ll learn another shortcut. You can add/commit with one move by adding <code>-a</code> to <code>git commit</code>, like so:</p>
+<pre><code class="lang-bash">git commit -am <span class="hljs-string">&quot;Fix file2 typo&quot;</span>
+</code></pre>
+<p>This will add <em>all</em> unstaged changes at once, so be careful! Only use this when you know for sure that you want to commit every change you&apos;ve made.</p>
+<h2 id="what-makes-a-good-commit-message">What Makes a Good Commit Message?</h2>
+<p>Although Git opens the full text editor for you, suggesting you write a short story about the commit, I don&apos;t think that&apos;s correct. A short sentence or phrase that begins with the <strong>action taken</strong> is appropriate. &quot;Add section on good commit messages&quot; might be a solid one for this section of the text. The reader quickly knows what changed and how.</p>
+<p>There are other places to add more detail, some of which we&apos;ll discuss later. For now, there is a little-known Git feature to add more detail about a commit afterwards and separately: Notes.</p>
+<h2 id="git-notes">Git Notes</h2>
+<p>Git Notes are note exactly a secret feature, but since GitHub doesn&apos;t show them, they might as well be. They allow additional context to commits. Think of them as accessories to commits—stored separately, but related.</p>
+<p>To add a note, run <code>git notes add</code>. This will bring up the text editor, allowing you to write whatever you like.</p>
+<p>By default, the note will be added to the most recent commit.</p>
+<p>Run <code>git log</code> to see how the note adds to the commit message.</p>
+<p>Wanna makes changes to the current note? <code>git notes edit</code> will bring the editor back up!</p>
+<p>If you want to add notes for another commit, use <code>git notes add &lt;commit ID&gt;</code>. </p>
+<p><code>git notes remove</code> works as you&apos;d expect, and can also accept a commit ID.</p>
+<h2 id="check-for-understanding">Check For Understanding</h2>
+<p><strong>Makes some changes to your files, then commit the changes. Then, add a log to both the current commit and the previous commit!</strong></p>
 
                                 
                                 </section>
@@ -469,12 +494,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="1-3_git-core-loop.html" class="navigation navigation-prev " aria-label="Previous page: 1-3: The Git Core Loop">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1-1_the-project.html" class="navigation navigation-next " aria-label="Next page: 1-1: The Project">
+                <a href="1-5_fixing-mistakes.html" class="navigation navigation-next " aria-label="Next page: 1-5: Fixing Mistakes">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -485,7 +510,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1: Gitting Acquainted","level":"1.2","depth":1,"next":{"title":"1-1: The Project","level":"1.2.1","depth":2,"path":"1_gitting-acquainted/1-1_the-project.md","ref":"1_gitting-acquainted/1-1_the-project.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"1-1: The Project","level":"1.2.1","depth":2,"path":"1_gitting-acquainted/1-1_the-project.md","ref":"1_gitting-acquainted/1-1_the-project.md","articles":[]},{"title":"1-2: Git Repositories","level":"1.2.2","depth":2,"path":"1_gitting-acquainted/1-2_git-repositories.md","ref":"1_gitting-acquainted/1-2_git-repositories.md","articles":[]},{"title":"1-3: The Git Core Loop","level":"1.2.3","depth":2,"path":"1_gitting-acquainted/1-3_git-core-loop.md","ref":"1_gitting-acquainted/1-3_git-core-loop.md","articles":[]},{"title":"1-4: Commit Best Practices","level":"1.2.4","depth":2,"path":"1_gitting-acquainted/1-4_commit-best-practices.md","ref":"1_gitting-acquainted/1-4_commit-best-practices.md","articles":[]},{"title":"1-5: Fixing Mistakes","level":"1.2.5","depth":2,"path":"1_gitting-acquainted/1-5_fixing-mistakes.md","ref":"1_gitting-acquainted/1-5_fixing-mistakes.md","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_gitting-acquainted/README.md","mtime":"2023-04-02T15:11:15.887Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:02:29.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1-4: Commit Best Practices","level":"1.2.4","depth":2,"next":{"title":"1-5: Fixing Mistakes","level":"1.2.5","depth":2,"path":"1_gitting-acquainted/1-5_fixing-mistakes.md","ref":"1_gitting-acquainted/1-5_fixing-mistakes.md","articles":[]},"previous":{"title":"1-3: The Git Core Loop","level":"1.2.3","depth":2,"path":"1_gitting-acquainted/1-3_git-core-loop.md","ref":"1_gitting-acquainted/1-3_git-core-loop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_gitting-acquainted/1-4_commit-best-practices.md","mtime":"2023-04-02T15:11:15.891Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:16:17.809Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
