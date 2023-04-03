@@ -1,5 +1,5 @@
 {
-    "plugins": ["highlight"]
+    "plugins": ["highlight"],
     "title": "Creating With Git",
     "description": "An introductory course on Git for all types of projects from The Taggart Institute",
     "author": "Michael Taggart",
