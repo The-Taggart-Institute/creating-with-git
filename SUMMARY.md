@@ -20,6 +20,5 @@
 * [4: Publishing](4_publishing/README.md)
   * [4-1: Publishing Concepts](4_publishing/4-1_publishing-concepts.md)
   * [4-2: GitHub Pages](4_publishing/4-2_github-pages.md)
-  * [4-3: Netlify](4_publishing/4-3_netlify.md)
 * [5: Conclusion](5_conclusion/README.md)
   * [5-1: Exhibition of Mastery](5_conclusion/5-1_exhibition-of-mastery.md)
