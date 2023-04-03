@@ -1,0 +1,623 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>2-3: Merges · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-4_when-merges-go-wrong.html" />
+    
+    
+    <link rel="prev" href="2-2_hanging-onto-changes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_gitting-acquainted/">
+            
+                <a href="../1_gitting-acquainted/">
+            
+                    
+                    1: Gitting Acquainted
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_gitting-acquainted/1-1_the-project.html">
+            
+                <a href="../1_gitting-acquainted/1-1_the-project.html">
+            
+                    
+                    1-1: The Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_gitting-acquainted/1-2_git-repositories.html">
+            
+                <a href="../1_gitting-acquainted/1-2_git-repositories.html">
+            
+                    
+                    1-2: Git Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_gitting-acquainted/1-3_git-core-loop.html">
+            
+                <a href="../1_gitting-acquainted/1-3_git-core-loop.html">
+            
+                    
+                    1-3: The Git Core Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_gitting-acquainted/1-4_commit-best-practices.html">
+            
+                <a href="../1_gitting-acquainted/1-4_commit-best-practices.html">
+            
+                    
+                    1-4: Commit Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1_gitting-acquainted/1-5_fixing-mistakes.html">
+            
+                <a href="../1_gitting-acquainted/1-5_fixing-mistakes.html">
+            
+                    
+                    1-5: Fixing Mistakes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2: Possibilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2-1_branches.html">
+            
+                <a href="2-1_branches.html">
+            
+                    
+                    2-1: Branches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2-2_hanging-onto-changes.html">
+            
+                <a href="2-2_hanging-onto-changes.html">
+            
+                    
+                    2-2: Hanging onto Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="2-3_merges.html">
+            
+                <a href="2-3_merges.html">
+            
+                    
+                    2-3: Merges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2-4_when-merges-go-wrong.html">
+            
+                <a href="2-4_when-merges-go-wrong.html">
+            
+                    
+                    2-4: When Merges Go Wrong
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2-5_more-commit-sorcery.html">
+            
+                <a href="2-5_more-commit-sorcery.html">
+            
+                    
+                    2-5: More Commit Sorcery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_collaborating/">
+            
+                <a href="../3_collaborating/">
+            
+                    
+                    3: Collaborating
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_collaborating/3-1_remotes.html">
+            
+                <a href="../3_collaborating/3-1_remotes.html">
+            
+                    
+                    3-1: Remotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_collaborating/3-2_pull-requests.html">
+            
+                <a href="../3_collaborating/3-2_pull-requests.html">
+            
+                    
+                    3-2: Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_publishing/">
+            
+                <a href="../4_publishing/">
+            
+                    
+                    4: Publishing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_publishing/4-1_publishing-concepts.html">
+            
+                <a href="../4_publishing/4-1_publishing-concepts.html">
+            
+                    
+                    4-1: Publishing Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_publishing/4-2_github-pages.html">
+            
+                <a href="../4_publishing/4-2_github-pages.html">
+            
+                    
+                    4-2: GitHub Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5_conclusion/">
+            
+                <a href="../5_conclusion/">
+            
+                    
+                    5: Conclusion
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5_conclusion/5-1_exhibition-of-mastery.html">
+            
+                <a href="../5_conclusion/5-1_exhibition-of-mastery.html">
+            
+                    
+                    5-1: Exhibition of Mastery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2-3: Merges</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-3-merges">2-3: Merges</h1>
+<p>The time has come to bring our two branches together again. This usually occurs after a feature or fix has been completed and is ready to be introduced to a more primary branch. But how does git actually combine branches? This is a more complicated question than you might imagine, and in fact Git has multiple strategies it employs to merge branches, depending on the situation. But for now, we&apos;ll focus on the basics.</p>
+<p>Thinking back to <code>git diff</code> and even the notices we see after commits, it&apos;s clear that Git can track files line-by-line. This linewise examination is how Git proceeds for plaintext files. When comparing two branches, it looks at each file with changes. If one branch has changes and the other does not, or if the changes are identical, the change is adopted. If both branches have a change at the same location and they do <em>not</em> match, then a <strong>merge conflict</strong> arises. We&apos;ll address conflict resolution a bit later.</p>
+<h2 id="our-first-merge">Our First Merge</h2>
+<p>If you run <code>git merge --help</code>, you get a lovely ASCII-art diagram of diverging branches being recombined:</p>
+<pre><code>      A---B---C topic
+     /         \
+D---E---F---G---H main
+</code></pre><p>An important point in this diagram is commits <code>F</code> and <code>G</code>. Notice that commits can continue to take place on the <code>main</code> branch while the <code>topic</code> branch does its thing.</p>
+<p>Let&apos;s see if we can get that going with a couple of commits on <code>main</code>. Make sure you&apos;re on that branch before continuing.</p>
+<pre><code class="lang-bash">git switch main
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;The work goes on&quot;</span> &gt;&gt; file1.txt
+git commit -am <span class="hljs-string">&quot;Continued main updates&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;And on and on and on&quot;</span> &gt;&gt; file2.txt
+git commit -am <span class="hljs-string">&quot;Even more main updates&quot;</span>
+</code></pre>
+<p>Cool, we now have some parallel commits to our <code>experiment</code> branch. Now, we&apos;re ready for our first merge. The most basic version of the syntax is <code>git merge &lt;branch&gt;</code>, so:</p>
+<pre><code class="lang-bash">git merge experiment
+</code></pre>
+<p>Since this is a commit, your editor will pop up for a commit message. We could have provided a <code>-m</code>, but I wanted you to see that a merge does indeed create a commit.</p>
+<p><img src="../img/git-merge-1.png" alt="Git merge 1"></p>
+<p>We get quite a bit of info following the merge. First, we&apos;re told the merge was made using the <code>ort</code> strategy. That&apos;s the default strategy, but <a href="https://git-scm.com/docs/merge-strategies" target="_blank">there are others</a>. We also see a list of files changed/added—in this case, <code>experiment.txt</code> was added with 3 lines.</p>
+<h2 id="graphing-merges">Graphing Merges</h2>
+<p>In a world where commits can originate in multiple branches, it can be helpful to see where exactly a commit came from. There is a way to do this with <code>git log</code>.</p>
+<p>First, try <code>git log --graph</code>. You&apos;ll see something like this:</p>
+<p><img src="../img/git-log-2.png" alt="Git log 2"></p>
+<p>I&apos;ve highlighted the branch diagram, as well as the most recent commit on each branch which identifies the branch name. Although simplistic, this little diagram can tell us a lot about the history of our repo, and where a commit came from. But it is kind of a lot of text. Luckily, we can abbreviate it. </p>
+<pre><code class="lang-bash">git <span class="hljs-built_in">log</span> --graph --oneline
+</code></pre>
+<p><img src="../img/git-log-3.png" alt="Git log 3"></p>
+<p>Much easier to read if you ask me.</p>
+<p><code>git log</code> has several additional options to help make the review process easier, like <code>--limit</code>, <code>--since</code>, and <code>--until</code>. Everyone has their preferences for how to use <code>git log</code>. Take some time to practice and find yours.</p>
+<h2 id="squashing">Squashing</h2>
+<p>For the next bit, it&apos;s time once again for a new branch. Let&apos;s make the <code>phase2</code> branch and switch two it. This time we&apos;ll use <code>git switch</code> instead of <code>git checkout</code>, with the <code>-c</code> option, to create a new branch.</p>
+<pre><code class="lang-bash">git switch -c phase2
+</code></pre>
+<p>Now, time for some commits! Here&apos;s a set of commands to quickly generate some commits.</p>
+<pre><code class="lang-bash">touch phase2.txt
+git add phase2.txt
+git commit -m <span class="hljs-string">&quot;Add phase2.txt&quot;</span>
+bash -c <span class="hljs-string">&apos;for i in $(seq 10); do echo &quot;Step $i&quot; &gt;&gt; phase2.txt; git commit -am &quot;Step $i&quot;; done&apos;</span>
+</code></pre>
+<p>Now let&apos;s switch back to <code>main</code>.</p>
+<p>But before we merge these commits, let&apos;s pause for a moment. Do we <em>really</em> need all those tiny commits in this merge? Do we need to preserve every single one? Or would it be enough to represent the work in <code>phase2</code> as a single entity, and merge that. </p>
+<p>We can do that with the <code>--squash</code> option. This will compress the many commits into change, apply it to the current working tree, but <em>not</em> execute the commit. You still need to review the changes first, and then you can make the commit.</p>
+<pre><code class="lang-bash">git merge --squash phase2
+</code></pre>
+<p><img src="../img/git-merge-2.png" alt="Git Merge 2"></p>
+<p>You can see here that <code>phase2.txt</code>, all 10 lines of it, is added. However we&apos;re also told that as this is a &quot;squash commit,&quot; <code>HEAD</code> will not be updated. That&apos;s why my Git status indicator turns gold, indicating I have staged changes. <code>git status</code> will show I have a new file staged. From here, as long as I&apos;m happy with the results of the merge, I&apos;m ready to commit.</p>
+<pre><code class="lang-bash">git commit -m <span class="hljs-string">&quot;Merge phase2&quot;</span>
+</code></pre>
+<p>Now, <code>git log --graph --oneline</code> will only show a single commit for all that effort. It won&apos;t even show a separate branch! This might be what you want, but it might not. Also note that if you switch over to the <code>phase2</code> branch, the original commits are preserved in that branch&apos;s logs. You now have slightly different versions of history.</p>
+<p>Personally, I don&apos;t like to squash commits unless it would be very messy (dozens of commits clogging up the log) to do otherwise. I prefer to be able to see exactly what got merged in my primary branch.</p>
+<p>And now that we&apos;re done with the <code>phase2</code> branch, we can delete it.</p>
+<pre><code class="lang-bash">git branch -D phase 2
+</code></pre>
+<p>Now that&apos;s how merges work when everything&apos;s going well. Up next, we&apos;ll cover what happens when things go wrong.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-2_hanging-onto-changes.html" class="navigation navigation-prev " aria-label="Previous page: 2-2: Hanging onto Changes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-4_when-merges-go-wrong.html" class="navigation navigation-next " aria-label="Next page: 2-4: When Merges Go Wrong">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2-3: Merges","level":"1.3.3","depth":2,"next":{"title":"2-4: When Merges Go Wrong","level":"1.3.4","depth":2,"path":"2_possibilities/2-4_when-merges-go-wrong.md","ref":"2_possibilities/2-4_when-merges-go-wrong.md","articles":[]},"previous":{"title":"2-2: Hanging onto Changes","level":"1.3.2","depth":2,"path":"2_possibilities/2-2_hanging-onto-changes.md","ref":"2_possibilities/2-2_hanging-onto-changes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_possibilities/2-3_merges.md","mtime":"2023-04-02T15:11:15.923Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:02:29.099Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>    
+    <script>hljs.highlightAll();</script>
+
+    </body>
+</html>
+
