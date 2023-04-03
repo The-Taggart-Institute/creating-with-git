@@ -41,21 +41,27 @@ It's time to write a **build script**.
 
 Our build script needs to accomplish the following:
 
-1. Rebuild the site.
-2. Copy the `_book` folder contents to `docs`
-3. Create a new commit for the rebuild (every time), maybe with a date?
-4. Push the commit to GitHub.
+1. Make the `docs` folder if it doesn't exist.
+2. Rebuild the site.
+3. Copy the `_book` folder contents to `docs`
+4. Create a new commit for the rebuild (every time), maybe with a date?
+5. Push the commit to GitHub.
 
 Honestly not too bad, and easily done in bash. Here's what our new `build.sh` should look like.
 
 ```bash
 #!/bin/bash
 
+# Make docs folder if it doesn't exist
+if [ ! -d docs ]; then
+    mkdir docs
+fi
+
 # Rebuild the site
 npx honkit build
 
 # Copy the `_book` folder contents to `docs`
-cp -Rf _book docs
+cp -Rf _book/* docs/
 
 # Create a new commit for the rebuild (every time), maybe with a date?
 git add docs/
