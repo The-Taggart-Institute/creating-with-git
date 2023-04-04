@@ -105,7 +105,7 @@ Personally, I don't like to squash commits unless it would be very messy (dozens
 And now that we're done with the `phase2` branch, we can delete it.
 
 ```bash
-git branch -D phase 2
+git branch -D phase2
 ```
 
 Now that's how merges work when everything's going well. Up next, we'll cover what happens when things go wrong.
