@@ -71,7 +71,14 @@ git commit -m "Rebuild: $(date)"
 git push
 ```
 
-Save this file. Then make it executable by running `chmod +x build.sh`. Let's do a test run! Make some changes to your Markdown files, then run:
+Save this file. Then make it executable by running `chmod +x build.sh`. Now of course we'll add it:
+
+```bash
+git add build.sh
+git commit -m "Add build script"
+```
+
+Let's do a test run! Make some changes to your Markdown files, then run:
 
 ```bash
 ./build.sh
