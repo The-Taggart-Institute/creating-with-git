@@ -54,7 +54,7 @@ echo "My first commit!" > file1.txt
 
 And now, it's time for our first (and arguably most important) Git command:
 
-```
+```bash
 git status
 ```
 
@@ -158,11 +158,4 @@ Now that we're familiar with the Git Core Loop, in the next lesson we'll review 
 ## Check For Understanding
 
 **In your own words, describe the Git Core Loop.**
-
-
-
-
-
-
-
 

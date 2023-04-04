@@ -22,7 +22,7 @@ Wait, what?
 
 Just trust me for a minute. Let's run it now.
 
-```
+```bash
 git checkout -b experiment
 ```
 
@@ -32,7 +32,7 @@ Now, what does `git branch` show you?
 
 We are now in a different branch. Commits we make here will be isolated from the `main` branch. Let's prove it.
 
-```
+```bash
 echo "Let's see what this does!" > experiment.txt
 git add experiment.txt
 git commit -m "Add experiment.txt"
@@ -40,7 +40,7 @@ git commit -m "Add experiment.txt"
 
 Okay so we have a new commit. You can confirm it's there with `git log` if you like, but it's there. And our working tree is clean, with no unstaged changes. That means we're free to checkout to another branch. Let's go back to `main`.
 
-```
+```bash
 git checkout main
 ```
 

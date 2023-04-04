@@ -42,7 +42,7 @@ You should see something like:
 
 If you `cat experiment.txt`, you'll see that the new line has disappeared. But it's not gone forever; it's just in the stash! Let's bring it back.
 
-```
+```bash
 git stash pop
 ```
 

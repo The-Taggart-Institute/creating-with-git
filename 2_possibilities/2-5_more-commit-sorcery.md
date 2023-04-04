@@ -58,7 +58,7 @@ Looking at the contents of the repo, you won't see `newfeature.txt`! But `phase2
 
 Now let's head over to `shortterm` and add some work.
 
-```
+```bash
 git switch shortterm
 git mv experiment.txt feature.txt
 git commit -m "Stabilizing experimental feature"
