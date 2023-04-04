@@ -6,7 +6,7 @@ For this exploration, let's begin by making two branches off of `main`.
 
 ```bash
 git switch -c longterm
-git switch -c shorttem
+git switch -c shortterm
 git switch main
 ```
 
