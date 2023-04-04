@@ -1,0 +1,607 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>2-1: Branches · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-2_hanging-onto-changes.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_gitting-acquainted/">
+            
+                <a href="../1_gitting-acquainted/">
+            
+                    
+                    1: Gitting Acquainted
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_gitting-acquainted/1-1_the-project.html">
+            
+                <a href="../1_gitting-acquainted/1-1_the-project.html">
+            
+                    
+                    1-1: The Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_gitting-acquainted/1-2_git-repositories.html">
+            
+                <a href="../1_gitting-acquainted/1-2_git-repositories.html">
+            
+                    
+                    1-2: Git Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_gitting-acquainted/1-3_git-core-loop.html">
+            
+                <a href="../1_gitting-acquainted/1-3_git-core-loop.html">
+            
+                    
+                    1-3: The Git Core Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_gitting-acquainted/1-4_commit-best-practices.html">
+            
+                <a href="../1_gitting-acquainted/1-4_commit-best-practices.html">
+            
+                    
+                    1-4: Commit Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1_gitting-acquainted/1-5_fixing-mistakes.html">
+            
+                <a href="../1_gitting-acquainted/1-5_fixing-mistakes.html">
+            
+                    
+                    1-5: Fixing Mistakes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2: Possibilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="2-1_branches.html">
+            
+                <a href="2-1_branches.html">
+            
+                    
+                    2-1: Branches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2-2_hanging-onto-changes.html">
+            
+                <a href="2-2_hanging-onto-changes.html">
+            
+                    
+                    2-2: Hanging onto Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2-3_merges.html">
+            
+                <a href="2-3_merges.html">
+            
+                    
+                    2-3: Merges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2-4_when-merges-go-wrong.html">
+            
+                <a href="2-4_when-merges-go-wrong.html">
+            
+                    
+                    2-4: When Merges Go Wrong
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2-5_more-commit-sorcery.html">
+            
+                <a href="2-5_more-commit-sorcery.html">
+            
+                    
+                    2-5: More Commit Sorcery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_collaborating/">
+            
+                <a href="../3_collaborating/">
+            
+                    
+                    3: Collaborating
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_collaborating/3-1_remotes.html">
+            
+                <a href="../3_collaborating/3-1_remotes.html">
+            
+                    
+                    3-1: Remotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_collaborating/3-2_pull-requests.html">
+            
+                <a href="../3_collaborating/3-2_pull-requests.html">
+            
+                    
+                    3-2: Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4_publishing/">
+            
+                <a href="../4_publishing/">
+            
+                    
+                    4: Publishing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4_publishing/4-1_publishing-concepts.html">
+            
+                <a href="../4_publishing/4-1_publishing-concepts.html">
+            
+                    
+                    4-1: Publishing Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4_publishing/4-2_github-pages.html">
+            
+                <a href="../4_publishing/4-2_github-pages.html">
+            
+                    
+                    4-2: GitHub Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5_conclusion/">
+            
+                <a href="../5_conclusion/">
+            
+                    
+                    5: Conclusion
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5_conclusion/5-1_exhibition-of-mastery.html">
+            
+                <a href="../5_conclusion/5-1_exhibition-of-mastery.html">
+            
+                    
+                    5-1: Exhibition of Mastery
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2-1: Branches</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-1-branches">2-1: Branches</h1>
+<p><img src="../img/timelines.png" alt="Loki Timelines"></p>
+<p><em>Let&apos;s make like Loki and break the timestream</em></p>
+<p>We&apos;ve explored moving forward and backward in time, but what about...<em>sideways</em>?</p>
+<p>Yes, it&apos;s possible. With <strong>branches</strong>, we&apos;re able to explore alternate realities of our project while maintaining the integrity of the &quot;prime timeline.&quot; Then, if we&apos;re happy with the changes we&apos;ve made in one of our alternate branches, we can bring them into the main branch. This process is known as <strong>merging</strong>.</p>
+<h2 id="branching-basics">Branching Basics</h2>
+<p>Multiple <code>git</code> subcommands are used when working with branches, so we&apos;ll take this slow. To begin, let&apos;s run <code>git branch</code> in our <code>gitdemo</code> repository.</p>
+<p>Not a lot to see, eh? We only have one branch right now: <code>main</code>. We&apos;ll soon change that.</p>
+<p>Let&apos;s imagine we want to play with some ideas for our project in a new file named <code>experiment.txt</code>. But rather than mussing our current branch with our experiment, we&apos;ll create a new branch to do our work.</p>
+<p>Strangely, the most common way to make a new branch is not with <code>git branch</code>. Instead, we use <code>git checkout -b &lt;branch_name&gt;</code>.</p>
+<p>Wait, what?</p>
+<p>Just trust me for a minute. Let&apos;s run it now.</p>
+<pre><code>git checkout -b experiment
+</code></pre><p>Now, what does <code>git branch</code> show you?</p>
+<blockquote>
+<p>If you&apos;re using our virtual machine or a Git-aware shell, your prompt will also change!</p>
+</blockquote>
+<p>We are now in a different branch. Commits we make here will be isolated from the <code>main</code> branch. Let&apos;s prove it.</p>
+<pre><code>echo &quot;Let&apos;s see what this does!&quot; &gt; experiment.txt
+git add experiment.txt
+git commit -m &quot;Add experiment.txt&quot;
+</code></pre><p>Okay so we have a new commit. You can confirm it&apos;s there with <code>git log</code> if you like, but it&apos;s there. And our working tree is clean, with no unstaged changes. That means we&apos;re free to checkout to another branch. Let&apos;s go back to <code>main</code>.</p>
+<pre><code>git checkout main
+</code></pre><p><code>git branch</code> confirms we&apos;re in the right spot. And <code>ls</code> will show that...hey wait! Where&apos;s <code>experiment.txt</code>?</p>
+<p>It&apos;s in another branch at the moment. Check <code>git log</code>.</p>
+<p>It&apos;s like our experiment never happened! Use <code>git checkout -</code> to switch back to the previous branch. The <code>-</code> works kind of like the &quot;Back&quot; button on a television remote.</p>
+<p>Running <code>ls</code> shows our <code>experiment.txt</code> is back, and <code>git log</code> once again shows our commit. We&apos;re in an alternate timeline! </p>
+<h2 id="checking-out-git-checkout">Checking Out <code>git checkout</code></h2>
+<p>The <code>--help</code> page for <code>git checkout</code> has a definition that is, well, utterly unhelpful.</p>
+<blockquote>
+<p>Updates files in the working tree to match the version in the index or the specified tree. If no pathspec was given, git checkout will also update HEAD to set the specified branch as the current branch.</p>
+</blockquote>
+<p>Thanks, makes perfect sense. Well, it would if you knew all of those Git internals, but this is an intro course and you shouldn&apos;t have to. So what does <code>git checkout</code> <em>really</em> do?</p>
+<p>Given a branch or a commit hash, <code>git checkout</code> will update the repo to match the state at that commit. That might sound like <code>git reset</code>, but there&apos;s a very important difference: <code>git checkout</code> will not treat changes after a given commit (or in another branch) as though they exist.</p>
+<p>Run <code>git log</code> and choose a commit hash, any commit hash. Then use it with <code>git checkout</code>. </p>
+<p>First, you get a rather wordy message from Git. You&apos;ll notice that all changes after your target commit are just...gone. Not unstaged. </p>
+<p>Oh no; did we just destroy the future?</p>
+<p>Nah, read that message.</p>
+<p>The important term here is the <strong>detached HEAD</strong>. You&apos;ve essentially entered a safe bubble (or Mirror Universe, for <em>Doctor Strange</em> fans) that has no impact on any branch&apos;s real timeline. It&apos;s pretty odd, and I almost never do this, but it is possible. The important point here is that your future changes are treated as nonexistent here in this bubble universe. But don&apos;t worry; it&apos;s easy to get out. As the message tells you, <code>git switch -</code> will work just fine, but so will <code>git checkout -</code>. After doing exactly that, we&apos;re back in the present of the <code>experiment</code> branch, with all our work intact. </p>
+<p>Now to switch back to <code>main</code>, we can no longer use <code>git checkout -</code>. That&apos;ll put us back in the detached HEAD, since that was our previous location. We&apos;ll have to specify the branch with <code>git checkout main</code>. And we&apos;re back in the primary timeline.</p>
+<p>Let&apos;s remain here for the moment, and then talk about how to hang on to changes we&apos;re not ready to commit while moving between branches.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 2: Possibilities">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-2_hanging-onto-changes.html" class="navigation navigation-next " aria-label="Next page: 2-2: Hanging onto Changes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2-1: Branches","level":"1.3.1","depth":2,"next":{"title":"2-2: Hanging onto Changes","level":"1.3.2","depth":2,"path":"2_possibilities/2-2_hanging-onto-changes.md","ref":"2_possibilities/2-2_hanging-onto-changes.md","articles":[]},"previous":{"title":"2: Possibilities","level":"1.3","depth":1,"path":"2_possibilities/README.md","ref":"2_possibilities/README.md","articles":[{"title":"2-1: Branches","level":"1.3.1","depth":2,"path":"2_possibilities/2-1_branches.md","ref":"2_possibilities/2-1_branches.md","articles":[]},{"title":"2-2: Hanging onto Changes","level":"1.3.2","depth":2,"path":"2_possibilities/2-2_hanging-onto-changes.md","ref":"2_possibilities/2-2_hanging-onto-changes.md","articles":[]},{"title":"2-3: Merges","level":"1.3.3","depth":2,"path":"2_possibilities/2-3_merges.md","ref":"2_possibilities/2-3_merges.md","articles":[]},{"title":"2-4: When Merges Go Wrong","level":"1.3.4","depth":2,"path":"2_possibilities/2-4_when-merges-go-wrong.md","ref":"2_possibilities/2-4_when-merges-go-wrong.md","articles":[]},{"title":"2-5: More Commit Sorcery","level":"1.3.5","depth":2,"path":"2_possibilities/2-5_more-commit-sorcery.md","ref":"2_possibilities/2-5_more-commit-sorcery.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["highlight"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_possibilities/2-1_branches.md","mtime":"2023-04-02T15:11:15.919Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-03T07:16:17.809Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>    
+    <script>hljs.highlightAll();</script>
+
+    </body>
+</html>
+
