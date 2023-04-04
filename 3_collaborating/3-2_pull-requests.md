@@ -121,7 +121,7 @@ This adds (`-a`) with a message (`-m`) of "Initial release."
 Now, to send this tag to GitHub, there is a specific `push` syntax:
 
 ```bash
-git pugh origin 0.1.0
+git push origin 0.1.0
 ```
 
 And just like that, we have a new tag available! You can see this in the bottom right of the repo main page, or at `/tags`.
