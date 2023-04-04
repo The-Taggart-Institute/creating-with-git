@@ -115,13 +115,13 @@ Let's see that `git status now`.
 
 ![Git status 4](/img/git-status-4.png)
 
-Hey hey, something got modified and Git noticed it. Let's stage that change one more time with `git add file1.txt`.
-
 Before we make our next commit, let's review the changes so far in detail. `git diff`, or `git diff <file>` will tell us exactly what's changed since the last commit. Try `git diff file1.txt`.
 
 ![Git diff](/img/git-diff-1.png)
 
 Git is telling us a new line has been added since the last commit. Which, yeah, it has. This is obviously a very simple change, but I find it handy to use `git diff` to check just what's changed before I make the commit. That helps shape the commit message.
+
+Let's stage that change one more time with `git add file1.txt`.
 
 Speaking of commit messages, let's try a slightly quicker method for this one. By passing the `-m` option and a message, we can avoid entering the text editor for the commit message.
 
