@@ -52,16 +52,16 @@ Honestly not too bad, and easily done in bash. Here's what our new `build.sh` sh
 ```bash
 #!/bin/bash
 
-# Make docs folder if it doesn't exist
-if [ ! -d docs ]; then
-    mkdir docs
+# Remove existing docs folder 
+if [ -d docs ]; then
+    rm -rf docs
 fi
 
 # Rebuild the site
 npx honkit build
 
 # Copy the `_book` folder contents to `docs`
-cp -Rf _book/* docs/
+cp -Rf _book docs
 
 # Create a new commit for the rebuild (every time), maybe with a date?
 git add docs/
@@ -69,6 +69,7 @@ git commit -m "Rebuild: $(date)"
 
 # Push the commit to GitHub.
 git push
+
 ```
 
 Save this file. Then make it executable by running `chmod +x build.sh`. Now of course we'll add it:
