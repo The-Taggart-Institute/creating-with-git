@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Make docs folder if it doesn't exist
+# Remove existing docs folder 
 if [ -d docs ]; then
     rm -rf docs
 fi
