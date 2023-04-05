@@ -41,7 +41,7 @@ It's time to write a **build script**.
 
 Our build script needs to accomplish the following:
 
-1. Make the `docs` folder if it doesn't exist.
+1. Remove `docs` fodler if it exists to prevent it from getting added to `_book`.
 2. Rebuild the site.
 3. Copy the `_book` folder contents to `docs`
 4. Create a new commit for the rebuild (every time), maybe with a date?
