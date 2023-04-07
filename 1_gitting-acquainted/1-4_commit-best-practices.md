@@ -33,7 +33,7 @@ There are other places to add more detail, some of which we'll discuss later. Fo
 
 ## Git Notes
 
-Git Notes are note exactly a secret feature, but since GitHub doesn't show them, they might as well be. They allow additional context to commits. Think of them as accessories to commits—stored separately, but related.
+Git Notes are not exactly a secret feature, but since GitHub doesn't show them, they might as well be. They allow additional context to commits. Think of them as accessories to commits—stored separately, but related.
 
 To add a note, run `git notes add`. This will bring up the text editor, allowing you to write whatever you like.
 
