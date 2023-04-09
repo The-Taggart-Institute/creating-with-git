@@ -63,7 +63,7 @@ Much easier to read if you ask me.
 
 ## Squashing
 
-For the next bit, it's time once again for a new branch. Let's make the `phase2` branch and switch two it. This time we'll use `git switch` instead of `git checkout`, with the `-c` option, to create a new branch.
+For the next bit, it's time once again for a new branch. Let's make the `phase2` branch and switch to it. This time we'll use `git switch` instead of `git checkout`, with the `-c` option, to create a new branch.
 
 
 ```bash
