@@ -89,7 +89,7 @@ First, let's run `git status` to see how things stand.
 
 ![Git Remotes 4](/img/git-remotes-4.png)
 
-Now that we have a remote, `git status` provides new information. But _we know it's wrong!_ Our branch is not uo to date with GitHub! What's up?
+Now that we have a remote, `git status` provides new information. But _we know it's wrong!_ Our branch is not up to date with GitHub! What's up?
 
 This is important: **Git does not fetch remote changes automatically**. But we can. Do so with `git fetch.` Now run `git status` again.
 

@@ -129,7 +129,7 @@ And just like that, we have a new tag available! You can see this in the bottom 
 
 ![Git Tag](/img/git-tag-1.png)
 
-![Git Tag 2](/img/git-tag-2.png)yy
+![Git Tag 2](/img/git-tag-2.png)
 
 To make a release, click on the "Releases" tab, and "Create a new release."
 
