@@ -3,6 +3,8 @@
 
 # Introduction
 
+- [0-1: About the Course](0-1_introduction.md)
+
 # 1: Gitting Acquainted
 
 - [1-1: The Project](1-1_the-project.md)
