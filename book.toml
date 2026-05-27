@@ -1,0 +1,12 @@
+[book]
+title = "Creating With Git"
+authors = ["Taggart"]
+description = "An introductory course on Git for all types of projects from The Taggart Institute"
+language = "en"
+
+[output.html]
+no-section-label = true
+
+[output.html.print]
+enable = true
+page-break = true
