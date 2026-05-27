@@ -1,24 +1,34 @@
 # Summary
 
 
-* [Introduction](README.md)
-* [1: Gitting Acquainted](1_gitting-acquainted/README.md)
-  * [1-1: The Project](1_gitting-acquainted/1-1_the-project.md)
-  * [1-2: Git Repositories](1_gitting-acquainted/1-2_git-repositories.md)
-  * [1-3: The Git Core Loop](1_gitting-acquainted/1-3_git-core-loop.md)
-  * [1-4: Commit Best Practices](1_gitting-acquainted/1-4_commit-best-practices.md)
-  * [1-5: Fixing Mistakes](1_gitting-acquainted/1-5_fixing-mistakes.md)
-* [2: Possibilities](2_possibilities/README.md)
-  * [2-1: Branches](2_possibilities/2-1_branches.md)
-  * [2-2: Hanging onto Changes](2_possibilities/2-2_hanging-onto-changes.md)
-  * [2-3: Merges](2_possibilities/2-3_merges.md)
-  * [2-4: When Merges Go Wrong](2_possibilities/2-4_when-merges-go-wrong.md)
-  * [2-5: More Commit Sorcery](2_possibilities/2-5_more-commit-sorcery.md)
-* [3: Collaborating](3_collaborating/README.md)
-  * [3-1: Remotes](3_collaborating/3-1_remotes.md)
-  * [3-2: Pull Requests](3_collaborating/3-2_pull-requests.md)
-* [4: Publishing](4_publishing/README.md)
-  * [4-1: Publishing Concepts](4_publishing/4-1_publishing-concepts.md)
-  * [4-2: GitHub Pages](4_publishing/4-2_github-pages.md)
-* [5: Conclusion](5_conclusion/README.md)
-  * [5-1: Exhibition of Mastery](5_conclusion/5-1_exhibition-of-mastery.md)
+# Introduction
+
+# 1: Gitting Acquainted
+
+- [1-1: The Project](1-1_the-project.md)
+- [1-2: Git Repositories](1-2_git-repositories.md)
+- [1-3: The Git Core Loop](1-3_git-core-loop.md)
+- [1-4: Commit Best Practices](1-4_commit-best-practices.md)
+- [1-5: Fixing Mistakes](1-5_fixing-mistakes.md)
+
+# 2: Possibilities
+
+- [2-1: Branches](2-1_branches.md)
+- [2-2: Hanging onto Changes](2-2_hanging-onto-changes.md)
+- [2-3: Merges](2-3_merges.md)
+- [2-4: When Merges Go Wrong](2-4_when-merges-go-wrong.md)
+- [2-5: More Commit Sorcery](2-5_more-commit-sorcery.md)
+
+# 3: Collaborating]
+
+- [3-1: Remotes](3-1_remotes.md)
+- [3-2: Pull Requests](3-2_pull-requests.md)
+
+# 4: Publishing
+
+- [4-1: Publishing Concepts](4-1_publishing-concepts.md)
+- [4-2: GitHub Pages](4-2_github-pages.md)
+
+# 5: Publishing
+
+- [5-1: Exhibition of Mastery](5-1_exhibition-of-mastery.md)
