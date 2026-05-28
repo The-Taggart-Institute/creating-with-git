@@ -1,6 +1,6 @@
 # Creating With Git
 
-![Banner](/img/cwg_banner.png)
+![Banner](src/img/cwg_banner.png)
 
 This repository and book serves as the instructional material and work template for the course "Creating With Git" on [The Taggart Institute](https://taggartinstitute.org).
 
@@ -42,7 +42,7 @@ For now you can just breeze through the process. Add a passphrase if you like, b
 
 Now, navigate to [https://github.com/settings/keys](https://github.com/settings/keys) and click "New SSH key."
 
-![New SSH Key](/img/new-ssh-key.png)
+![New SSH Key](src/img/new-ssh-key.png)
 
 Name it whatever you like. I tend to name it after the computer I generated it on. Copy and paste the public key from the terminal into the "Key" text area and make sure the "Key type" remains "Authentication Key."
 
@@ -56,7 +56,7 @@ Head over to, well, this. [https://github.com/The-Taggart-Institute/creating-wit
 
 Fork the repo to your account with this button: 
 
-![GitHub Fork](/img/fork.png)
+![GitHub Fork](src/img/fork.png)
 
 With your very own copy of the repo, clone it down by copying the URL and then heading over to your terminal and typing:
 
